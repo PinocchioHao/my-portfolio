@@ -1,45 +1,46 @@
-import {AboutMeContextProvider} from "../../context/AboutMeContext.jsx";
+import { AboutMeContextProvider } from "../../context/AboutMeContext.jsx";
 import AboutMeBio from "../about/AboutMeBio.jsx";
-import {motion} from "framer-motion";
 import AboutCounter from "../about/AboutCounter.jsx";
-import AboutClients from "../about/AboutClients.jsx";
+import AboutSkills from "../about/AboutSkills.jsx"; // 1. 引入新组件
+import { motion } from "framer-motion";
 
 const AboutMe = () => {
     return (
         <AboutMeContextProvider>
+            {/* Bio Section */}
             <motion.div
-                initial={{opacity: 0}}
-                animate={{opacity: 1, delay: 1}}
-                transition={{duration: 0.5}}
-                exit={{opacity: 0}}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, delay: 1 }}
+                transition={{ duration: 0.5 }}
+                exit={{ opacity: 0 }}
                 className="container mx-auto"
             >
-                <AboutMeBio/>
+                <AboutMeBio />
             </motion.div>
 
-            {/** Counter without paddings */}
+            {/* Counter Section (建议保留，可以放 years of experience, projects completed 等) */}
             <motion.div
-                initial={{opacity: 0}}
-                animate={{opacity: 1, delay: 1}}
-                transition={{duration: 0.5}}
-                exit={{opacity: 0}}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, delay: 1 }}
+                transition={{ duration: 0.5 }}
+                exit={{ opacity: 0 }}
             >
-                <AboutCounter/>
+                <AboutCounter />
             </motion.div>
 
+            {/* Skills Section (原 Clients 区域) */}
             <motion.div
-                initial={{opacity: 0}}
-                animate={{opacity: 1, delay: 1}}
-                exit={{opacity: 0}}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, delay: 1 }}
+                exit={{ opacity: 0 }}
                 className="container mx-auto"
             >
-                <AboutClients/>
+                {/* 2. 替换为 AboutSkills */}
+                <AboutSkills />
             </motion.div>
 
         </AboutMeContextProvider>
     );
-
-
 }
 
 export default AboutMe;

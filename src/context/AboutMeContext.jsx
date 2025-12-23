@@ -1,23 +1,25 @@
-import {createContext, useState} from "react";
-import {aboutMeData} from '../data/aboutMeData';
-import {clientsHeading as clientsPageHeading} from '../data/clientsData';
-import {clientsData as clientsDataJson} from '../data/clientsData';
+import { createContext, useState } from "react";
+import { aboutMeData as aboutMeDataJson } from '../data/aboutMeData.jsx';
+// 引入新的 skills 数据
+import { skillsHeading as skillsHeadingText, skillsData as skillsDataJson } from '../data/aboutMeData.jsx';
 
 const AboutMeContext = createContext();
 
-export const AboutMeContextProvider = ({children}) => {
-    const [aboutMe, setAboutMe] = useState(aboutMeData);
-    const clientsHeading = clientsPageHeading;
-    const [clientsData, setClientsData] = useState(clientsDataJson);
+export const AboutMeContextProvider = ({ children }) => {
+    const [aboutMe, setAboutMe] = useState(aboutMeDataJson);
+
+    // 替换掉原来的 clientsHeading 和 clientsData
+    const skillsHeading = skillsHeadingText;
+    const [skillsData, setSkillsData] = useState(skillsDataJson);
 
     return (
         <AboutMeContext.Provider
             value={{
                 aboutMe,
                 setAboutMe,
-                clientsHeading,
-                clientsData,
-                setClientsData,
+                skillsHeading, // 传递技能标题
+                skillsData,    // 传递技能数据
+                setSkillsData,
             }}
         >
             {children}

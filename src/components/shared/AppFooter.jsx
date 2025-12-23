@@ -7,52 +7,41 @@ import {
 } from 'react-icons/fi';
 import AppFooterCopyright from './AppFooterCopyright';
 
+// 1. 只保留你真正使用的两个高质量社交账号
 const socialLinks = [
     {
         id: 1,
-        icon: <FiGlobe />,
-        url: 'https://www.stoman.me/',
+        icon: <FiGithub />,
+        url: 'https://github.com/PinocchioHao',
     },
     {
         id: 2,
-        icon: <FiGithub />,
-        url: 'https://github.com/realstoman',
-    },
-    {
-        id: 3,
-        icon: <FiTwitter />,
-        url: 'https://twitter.com/realstoman',
-    },
-    {
-        id: 4,
         icon: <FiLinkedin />,
-        url: 'https://www.linkedin.com/in/realstoman',
-    },
-    {
-        id: 5,
-        icon: <FiYoutube />,
-        url: 'https://www.youtube.com/c/realstoman',
+        url: 'https://www.linkedin.com/in/yorick-yuhao-liu-81420431b/', // 记得替换成你的
     },
 ];
 
 const AppFooter = () => {
     return (
         <div className="container mx-auto">
-            <div className="pt-20 sm:pt-30 pb-8 mt-20 border-t-2 border-primary-light dark:border-secondary-dark">
+            {/* 2. 调整布局：大幅减少上下的 Padding (pt-20 -> pt-10)，让它紧凑一点 */}
+            <div className="pt-10 sm:pt-14 pb-8 mt-10 border-t-2 border-primary-light dark:border-secondary-dark">
+
                 {/* Footer social links */}
-                <div className="font-general-regular flex flex-col justify-center items-center mb-12 sm:mb-28">
-                    <p className="text-3xl sm:text-4xl text-primary-dark dark:text-primary-light mb-5">
-                        Follow me
-                    </p>
+                <div className="font-general-regular flex flex-col justify-center items-center mb-6 sm:mb-10">
+
+                    {/* 3. 删除了巨大的 "Follow me" 文本，直接展示图标 */}
+
                     <ul className="flex gap-4 sm:gap-8">
                         {socialLinks.map((link) => (
                             <a
                                 href={link.url}
                                 target="__blank"
                                 key={link.id}
-                                className="text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-300"
+                                className="text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-3 duration-300"
                             >
-                                <i className="text-xl sm:text-2xl md:text-3xl">
+                                {/* 4. 稍微调小了一点图标尺寸 */}
+                                <i className="text-xl sm:text-2xl">
                                     {link.icon}
                                 </i>
                             </a>

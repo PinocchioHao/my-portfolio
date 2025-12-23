@@ -27,7 +27,7 @@ const AppHeader = () => {
         }
     }
 
-    // 显示Hire Me弹窗
+    // 显示Hire Me弹窗   TODO 删去hire me，改成简历下载
     function showHireMeModal() {
         if (!showModal) {
             document
