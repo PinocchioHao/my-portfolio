@@ -3,7 +3,7 @@ import {
     FiTwitter,
     FiLinkedin,
     FiGlobe,
-    FiYoutube,
+    FiYoutube, FiMail,
 } from 'react-icons/fi';
 import AppFooterCopyright from './AppFooterCopyright';
 
@@ -11,13 +11,18 @@ import AppFooterCopyright from './AppFooterCopyright';
 const socialLinks = [
     {
         id: 1,
-        icon: <FiGithub />,
+        icon: <FiGithub/>,
         url: 'https://github.com/PinocchioHao',
     },
     {
         id: 2,
-        icon: <FiLinkedin />,
-        url: 'https://www.linkedin.com/in/yorick-yuhao-liu-81420431b/', // 记得替换成你的
+        icon: <FiLinkedin/>,
+        url: 'https://www.linkedin.com/in/yorick-yuhao-liu-81420431b/',
+    },
+    {
+        id: 3,
+        icon: <FiMail/>,
+        url: 'mailto:lyhkakaka@gmail.com',
     },
 ];
 

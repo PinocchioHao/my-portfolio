@@ -1,8 +1,9 @@
 const selectOptions = [
-	'Web Application',
-	'Mobile Application',
-	'UI/UX Design',
-	'Branding',
+	'FinTech',
+	'IoT',
+	'AI',
+	'Cloud',
+	'Web3'
 ];
 
 // 按类别搜索下拉框

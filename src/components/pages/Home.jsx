@@ -1,10 +1,14 @@
 import {ProjectsProvider} from "../../context/ProjectsContext.jsx";
 import ProjectsGrid from "../projects/ProjectsGrid.jsx";
+import AppBanner from "../shared/AppBanner.jsx";
+
 import {Link} from "react-router-dom";
 
 const Home = () => {
     return (
         <div className="container mx-auto">
+            <AppBanner/>
+
             <ProjectsProvider>
                 <ProjectsGrid/>
             </ProjectsProvider>

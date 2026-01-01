@@ -7,12 +7,22 @@ const AboutSkills = () => {
 
     // 辅助函数：将 0-100 的数值转换为 1-5 的能量等级
     const getLevel = (percentage) => {
-        if (percentage >= 90) return 5; // 大师/精通
-        if (percentage >= 75) return 4; // 高级/熟练
-        if (percentage >= 50) return 3; // 中级
-        if (percentage >= 25) return 2; // 初级
+        if (percentage >= 90) return 5; // 大师
+        if (percentage >= 80) return 4; // 精通
+        if (percentage >= 60) return 3; // 熟练
+        if (percentage >= 40) return 2; // 基础
         return 1; // 入门
     };
+
+    // --- 核心修改：定义颜色阶梯 (从浅到深) ---
+    // 使用 Tailwind 的 indigo 色系
+    const barColors = [
+        "bg-indigo-300", // 第1格：浅色
+        "bg-indigo-400", // 第2格
+        "bg-indigo-500", // 第3格：标准色
+        "bg-indigo-600", // 第4格
+        "bg-indigo-700"  // 第5格：深色 (表示非常精通)
+    ];
 
     return (
         <div className="mt-10 sm:mt-20">
@@ -59,17 +69,18 @@ const AboutSkills = () => {
                                             </div>
                                         </div>
 
-                                        {/* 3. 能量格 (Energy Bars) */}
+                                        {/* 3. 能量格 (Energy Bars) - 渐进色实现 */}
                                         <div className="flex gap-1.5 h-2.5">
-                                            {/* 生成 5 个格子 */}
                                             {[...Array(5)].map((_, i) => (
                                                 <motion.div
                                                     key={i}
-                                                    // 初始状态：灰色
+                                                    // 动态类名：
+                                                    // 如果是激活状态 (i < level)：从 barColors 数组取对应的颜色
+                                                    // 如果是未激活状态：显示灰色
                                                     className={`flex-1 rounded-sm ${
                                                         i < level
-                                                            ? "bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.6)]" // 激活：靛蓝 + 发光效果
-                                                            : "bg-gray-200 dark:bg-gray-700 opacity-50" // 未激活：灰色
+                                                            ? `${barColors[i]} shadow-sm`
+                                                            : "bg-gray-200 dark:bg-gray-700 opacity-40"
                                                     }`}
                                                     // 动画：依次点亮
                                                     initial={{ opacity: 0.3, scale: 0.8 }}
@@ -79,7 +90,7 @@ const AboutSkills = () => {
                                                     }}
                                                     transition={{
                                                         duration: 0.3,
-                                                        delay: 0.1 + (i * 0.1) // Stagger 效果：0.1s, 0.2s, 0.3s...
+                                                        delay: 0.1 + (i * 0.1) // Stagger 效果
                                                     }}
                                                     viewport={{ once: true }}
                                                 />
