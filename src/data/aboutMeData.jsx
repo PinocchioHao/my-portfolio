@@ -27,7 +27,7 @@ import { FiDatabase, FiServer, FiCode, FiTool } from "react-icons/fi";
 export const aboutMeData = [
 	{
 		id: 1, // 第一段：身份定位 + 教育背景
-		bio: 'I am a Senior Software Engineer with over four years of industrial experience at **Huawei** and **China Minsheng Bank**. Currently, I am pursuing a Master of Computer Science at the **University of Wollongong** (Graduating Mid-2026). I combine enterprise-level engineering rigor with full-stack agility to deliver robust, scalable software solutions.',
+		bio: 'I am a Software Engineer with over four years of industrial experience at **Huawei** and **China Minsheng Bank**. Currently, I am pursuing a Master of Computer Science at the **University of Wollongong** (Graduating Mid-2026). I combine enterprise-level engineering rigor with full-stack agility to deliver robust, scalable software solutions.',
 	},
 	{
 		id: 2, // 第二段：深度经历 (重点突出 Team Lead 和 架构能力)
@@ -35,7 +35,7 @@ export const aboutMeData = [
 	},
 	{
 		id: 3, // 第三段：技术栈 + 求职目标 (简单直接)
-		bio: 'I bring **full-stack capabilities** across the entire software lifecycle. My core expertise lies in the **Java ecosystem (Spring Boot)** and **React**, backed by robust database design (**MySQL, Redis**). Beyond coding, I am proficient in cloud infrastructure and DevOps, utilizing **AWS**, **Docker**, and **CI/CD** to ensure efficient deployment. I am actively seeking **internship or full-time opportunities** in Australia, ready to leverage this end-to-end experience to contribute immediately to a local team.',	},
+		bio: 'I bring **full-stack capabilities** across the entire software lifecycle. My core expertise lies in the **Java ecosystem (Spring Framework)** and **React**, backed by robust database design (**MySQL, Redis**). Beyond coding, I am proficient in cloud infrastructure and DevOps, utilizing **AWS**, **Docker**, and **CI/CD** to ensure efficient deployment. I am actively seeking **internship or full-time opportunities** in Australia, ready to leverage this end-to-end experience to contribute immediately to a local team.',	},
 ];
 
 // 2. 技能板块标题

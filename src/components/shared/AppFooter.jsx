@@ -19,11 +19,6 @@ const socialLinks = [
         icon: <FiLinkedin/>,
         url: 'https://www.linkedin.com/in/yorick-yuhao-liu-81420431b/',
     },
-    {
-        id: 3,
-        icon: <FiMail/>,
-        url: 'mailto:lyhkakaka@gmail.com',
-    },
 ];
 
 const AppFooter = () => {

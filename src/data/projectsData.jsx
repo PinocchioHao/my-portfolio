@@ -1,32 +1,50 @@
 // src/data/projectsData.jsx
 import { FiGithub, FiExternalLink, FiLock, FiServer, FiUsers, FiActivity } from 'react-icons/fi';
 
-// 引入现有图片占位
-import WebImage1 from '../images/web-project-1.jpg';
-import WebImage2 from '../images/web-project-2.jpg';
-import MobileImage1 from '../images/mobile-project-1.jpg';
+// 1. 引入原有的通用占位图 (用于华为和民生银行，因为是保密项目)
+import hw1 from '../images/project/hw1.png'; // Home
+import ms1 from '../images/project/ms1.jpg'; // Home
+
+// 2. 引入 CACHI Health Platform 图片
+import Cachi1 from '../images/project/cachi1.png'; // Home
+import Cachi2 from '../images/project/cachi2.png'; // Page 2
+import Cachi3 from '../images/project/cachi3.png'; // Page 3
+import Cachi4 from '../images/project/cachi4.png'; // LLM Chatbot
+
+// 3. 引入 Service Universe 图片
+import Su1 from '../images/project/su1.png'; // Home
+import Su2 from '../images/project/su2.png'; // Parking
+import Su3 from '../images/project/su3.png'; // Energy
+import Su4 from '../images/project/su4.png'; // Driving Test 1
+import Su5 from '../images/project/su5.png'; // Driving Test 2
+
+// 4. 引入 File Chain 图片
+import Fc1 from '../images/project/fc1.png'; // Register
+import Fc2 from '../images/project/fc2.png'; // Login
+import Fc3 from '../images/project/fc3.png'; // Home
+import Fc4 from '../images/project/fc4.png'; // File Mgmt
+import Fc5 from '../images/project/fc5.png'; // Upload Success
+import Fc6 from '../images/project/fc6.png'; // Permission
+import Fc7 from '../images/project/fc7.png'; // Blockchain Log
+import Fc8 from '../images/project/fc8.png'; // Client Tool
 
 export const projectsData = [
 	// =========================================================================
-	// 项目 1: 民生银行商业汇票系统 (FinTech / High Concurrency)
+	// 项目 1: 民生银行商业汇票系统 (保留通用图)
 	// =========================================================================
 	{
 		id: 1,
-		title: 'Enterprise Commercial Bill System',
-		category: 'FinTech / Enterprise',
-		img: WebImage1,
+		title: 'Minsheng Commercial Bill System',
+		category: 'Banking System / FinTech',
+		img: ms1, // 使用 ms1
 
 		ProjectHeader: {
-			title: 'Minsheng Commercial Bill System',
+			title: 'Commercial Bill System for China Minsheng Bank',
 			publishDate: 'Mar 2022 - Jun 2024',
 			tags: 'FinTech / Backend / Distributed System',
 		},
 		ProjectImages: [
-			{ id: 1, title: 'System Architecture Diagram', img: WebImage1 },
-			{ id: 2, title: 'Transaction Flow', img: WebImage2 },
-			{ id: 3, title: 'Transaction 123123', img: WebImage1 },
-			{ id: 4, title: 'Transaction 22', img: WebImage2 },
-			{ id: 5, title: 'Transaction F2222222low', img: MobileImage1 },
+			{ id: 1, title: 'Minsheng Bank Commercial Bill System', img: ms1 },
 		],
 		ProjectInfo: {
 			InfoHeading: 'Project Context',
@@ -56,7 +74,7 @@ export const projectsData = [
 				{
 					id: 1,
 					title: 'Internal System (NDA Protected)',
-					details: '#',
+					details: '#', // 设置为 null 表示无链接
 					icon: <FiLock className="text-red-500" />
 				},
 			],
@@ -66,12 +84,12 @@ export const projectsData = [
 				{
 					id: 1,
 					heading: 'Background & Scale',
-					details: 'This system serves as a core financial platform for China Minsheng Bank, handling commercial bill payment guarantees between enterprises. It encompasses complex financial workflows such as bill issuance, endorsement, acceptance, and discounting, along with innovative financial products integrated into various scenarios. As critical infrastructure, it processes **Billions of RMB** in transaction volume monthly, demanding extreme data consistency and stability.'
+					details: 'This system serves as a core financial platform for China Minsheng Bank, handling commercial bill payment guarantees between enterprises. It encompasses complex financial workflows such as bill issuance, endorsement, acceptance, and discounting. As critical infrastructure, it processes **Billions of RMB** in transaction volume monthly, demanding extreme data consistency and stability.'
 				},
 				{
 					id: 2,
 					heading: 'My Role & Technical Contributions',
-					details: 'As a core backend engineer, I led the development of the **Acceptance** and **Discount** modules. I utilized **IBM MQ** for asynchronous communication to ensure eventual consistency in high-concurrency transactions. To adapt to the complex banking intranet, we deployed on a **Private Cloud** infrastructure. I also significantly improved batch processing efficiency by optimizing **Gauss DB** queries and writing high-performance SQL.'
+					details: 'As a core backend engineer, I led the development of the **Acceptance** and **Discount** modules. I utilized **IBM MQ** for asynchronous communication to ensure eventual consistency in high-concurrency transactions. To adapt to the complex banking intranet, we deployed on a **Private Cloud** infrastructure. I also significantly improved batch processing efficiency by optimizing **Gauss DB** queries.'
 				},
 				{
 					id: 3,
@@ -83,22 +101,21 @@ export const projectsData = [
 	},
 
 	// =========================================================================
-	// 项目 2: 华为微波设备部署平台 (IoT / Telecom / Team Management)
+	// 项目 2: 华为微波设备部署平台 (保留通用图)
 	// =========================================================================
 	{
 		id: 2,
-		title: 'Microwave Deployment Platform',
-		category: 'Telecom / IoT Tooling',
-		img: MobileImage1,
+		title: 'Huawei Microwave Deployment Platform',
+		category: 'Telecom / IoT',
+		img: hw1, // 使用 hw1
 
 		ProjectHeader: {
-			title: 'Huawei Microwave Deployment Tool',
+			title: 'Huawei Microwave Deployment Platform',
 			publishDate: 'Jul 2019 - Apr 2021',
 			tags: 'IoT / Microservices / Team Mgmt',
 		},
 		ProjectImages: [
-			{ id: 1, title: 'Mobile App Interface', img: MobileImage1 },
-			{ id: 2, title: 'Microservice Architecture', img: WebImage2 },
+			{ id: 1, title: 'Huawei Microwave Deployment Tool', img: hw1 },
 		],
 		ProjectInfo: {
 			InfoHeading: 'Project Context',
@@ -126,8 +143,8 @@ export const projectsData = [
 			Resources: [
 				{
 					id: 1,
-					title: 'Internal Tool (Private)',
-					details: '#',
+					title: 'Internal System (NDA Protected)',
+					details: '#', // 设置为 null 表示无链接
 					icon: <FiLock className="text-yellow-500" />
 				},
 			],
@@ -137,7 +154,7 @@ export const projectsData = [
 				{
 					id: 1,
 					heading: 'Product Overview',
-					details: 'This is a comprehensive platform for the on-site deployment and O&M of telecommunication base stations. It consists of an Android frontend app and a Spring Boot microservices backend. It allows field engineers to automate configuration script delivery, collect performance metrics, and diagnose faults via wireless connection, significantly reducing labor costs for base station delivery.'
+					details: 'This is a comprehensive platform for the on-site deployment and O&M of telecommunication base stations. It consists of an Android frontend app and a Spring Boot microservices backend. It allows field engineers to automate configuration script delivery, collect performance metrics, and diagnose faults via wireless connection.'
 				},
 				{
 					id: 2,
@@ -147,29 +164,31 @@ export const projectsData = [
 				{
 					id: 3,
 					heading: 'Architecture Modernization',
-					details: 'Technically, I spearheaded the backend migration from a monolithic architecture to **Microservices**. I established a **Jenkins CI/CD** pipeline for automated build and inspection. I also led the refactoring of legacy code and implementation of unit tests, significantly improving code quality and ensuring the product met strict **Compliance Standards**. Additionally, I contributed to the development of specific **Android** client features.'
+					details: 'Technically, I spearheaded the backend migration from a monolithic architecture to **Microservices**. I established a **Jenkins CI/CD** pipeline for automated build and inspection. I also led the refactoring of legacy code and implementation of unit tests, significantly improving code quality and ensuring the product met strict **Compliance Standards**.'
 				},
 			],
 		},
 	},
 
 	// =========================================================================
-	// 项目 3: CACHI Health Platform (Digital Health / AI / Local NGO)
+	// 项目 3: CACHI Health Platform (更新真实图片)
 	// =========================================================================
 	{
 		id: 3,
 		title: 'CACHI Health Platform',
-		category: 'Digital Health / AI',
-		img: WebImage1,
+		category: 'Digital Health / LLM',
+		img: Cachi1,
 
 		ProjectHeader: {
 			title: 'CACHI - Culturally Appropriate Health Platform',
-			publishDate: 'Aug 2024 - Present',
+			publishDate: 'Jul 2025 - Present',
 			tags: 'React / Spring Boot / LLM / AWS',
 		},
 		ProjectImages: [
-			{ id: 1, title: 'Platform Home Page', img: WebImage1 },
-			{ id: 2, title: 'AI Chatbot Interface', img: WebImage2 },
+			{ id: 1, title: 'Platform Page 1', img: Cachi1 },
+			{ id: 2, title: 'Platform Page 2', img: Cachi2 },
+			{ id: 3, title: 'Platform Page 3', img: Cachi3 },
+			{ id: 4, title: 'AI Chatbot Assistant', img: Cachi4 },
 		],
 		ProjectInfo: {
 			InfoHeading: 'Project Context',
@@ -193,12 +212,18 @@ export const projectsData = [
 				}
 			],
 
-			ResourcesHeading: 'Code & Demo',
+			ResourcesHeading: 'Deliverables',
 			Resources: [
 				{
 					id: 1,
-					title: 'Source Code',
+					title: 'Frontend Code',
 					details: 'https://github.com/PinocchioHao/cachi-health-platform',
+					icon: <FiGithub />
+				},
+				{
+					id: 2,
+					title: 'Backend Code',
+					details: 'https://github.com/PinocchioHao/cachi-backend',
 					icon: <FiGithub />
 				},
 			],
@@ -208,7 +233,7 @@ export const projectsData = [
 				{
 					id: 1,
 					heading: 'The Challenge: Health Literacy Gap',
-					details: 'This project aims to address the health information gap for culturally and linguistically diverse communities in Illawarra (specifically Myanmar and Arabic backgrounds). Due to low English literacy, traditional text-based resources were ineffective. The client needed a visual, searchable, and culturally appropriate digital health platform.'
+					details: 'This project aims to address the health information gap for culturally and linguistically diverse communities in Illawarra. Due to low English literacy, traditional text-based resources were ineffective. The client needed a visual, searchable, and culturally appropriate digital health platform.'
 				},
 				{
 					id: 2,
@@ -218,20 +243,20 @@ export const projectsData = [
 				{
 					id: 3,
 					heading: 'Leadership & Stakeholder Management',
-					details: 'Beyond core development, I managed regular communication and showcases with the **Client (NGO)** and Supervisor. I translated ambiguous requirements into concrete technical specifications, coordinated full-stack development progress, and successfully deployed the MVP on **AWS**, receiving high acclaim from the client.'
+					details: 'Beyond core development, I managed regular communication and showcases with the **Client (NGO)** and Supervisor. I coordinated full-stack development progress and successfully deployed the MVP on **AWS**, receiving high acclaim from the client.'
 				},
 			],
 		},
 	},
 
 	// =========================================================================
-	// 项目 4: Service Universe (Microservices / Process Mining)
+	// 项目 4: Service Universe (更新真实图片)
 	// =========================================================================
 	{
 		id: 4,
 		title: 'Service Universe Platform',
 		category: 'Microservices / Cloud',
-		img: WebImage2,
+		img: Su1,
 
 		ProjectHeader: {
 			title: 'Service Universe - Municipal Services',
@@ -239,8 +264,11 @@ export const projectsData = [
 			tags: 'Spring Cloud / AWS / Process Mining',
 		},
 		ProjectImages: [
-			{ id: 1, title: 'Microservices Architecture', img: WebImage1 },
-			{ id: 2, title: 'Process Mining Analysis (Disco)', img: WebImage2 },
+			{ id: 1, title: 'Service Universe Home', img: Su1 },
+			{ id: 2, title: 'Smart Parking Service', img: Su2 },
+			{ id: 3, title: 'Energy Reporting Service', img: Su3 },
+			{ id: 4, title: 'Driving Test Booking - Step 1', img: Su4 },
+			{ id: 5, title: 'Driving Test Booking - Step 2', img: Su5 },
 		],
 		ProjectInfo: {
 			InfoHeading: 'Project Context',
@@ -269,15 +297,15 @@ export const projectsData = [
 			Resources: [
 				{
 					id: 1,
-					title: 'Architecture Design',
-					details: '#',
-					icon: <FiServer />
+					title: 'Frontend Code',
+					details: 'https://github.com/MingcanYang/City-Service-Hub',
+					icon: <FiGithub />
 				},
 				{
 					id: 2,
-					title: 'Process Mining Report',
-					details: '#',
-					icon: <FiActivity />
+					title: 'Backend Code',
+					details: 'https://github.com/PinocchioHao/service-universe-parent',
+					icon: <FiGithub />
 				},
 			],
 
@@ -286,49 +314,50 @@ export const projectsData = [
 				{
 					id: 1,
 					heading: 'Project Scope & Leadership',
-					details: 'The project aims to build a municipal service platform named "Service Universe". As **Team Leader**, I was responsible for technical selection and architectural design. I led 5 members through the entire process, from Enterprise Architecture design (ArchiMate) and Business Process Modeling (BPMN) to the final Microservices implementation.'
+					details: 'The project aims to build a municipal service platform named "Service Universe". As **Team Leader**, I was responsible for technical selection and architectural design. I led 5 members through the entire process, from Enterprise Architecture design to the final Microservices implementation.'
 				},
 				{
 					id: 2,
 					heading: 'Microservices Architecture (Spring Cloud)',
-					details: 'I designed and implemented a microservices architecture based on the **Spring Cloud Ecosystem**. The system comprises three core business services (Parking, Energy, Booking), each with independent databases (Database per Service pattern). I utilized **Netflix Eureka** for service discovery and **Spring Cloud Gateway** as the unified API entry point for dynamic routing.'
+					details: 'I designed and implemented a microservices architecture based on the **Spring Cloud Ecosystem**. The system comprises three core business services (Parking, Energy, Booking), each with independent databases. I utilized **Netflix Eureka** for service discovery and **Spring Cloud Gateway** for dynamic routing.'
 				},
 				{
 					id: 3,
 					heading: 'Containerization & Cloud Deployment',
-					details: 'To achieve "Build Once, Run Anywhere", I containerized all microservices using Dockerfiles and orchestrated the cluster using **Docker Compose**. Finally, I deployed the entire environment on an **AWS Linux 2023** instance, configuring Docker networks to ensure secure inter-service communication.'
-				},
-				{
-					id: 4,
-					heading: 'Process Mining & Analytics',
-					details: 'A key highlight of this project. To analyze process efficiency, I developed a custom log component using **AOP (Aspect-Oriented Programming)** to collect structured JSON Event Logs. I then wrote **Python scripts** to clean the data and imported it into **Disco** for process mining, successfully visualizing actual workflows and identifying bottlenecks.'
+					details: 'To achieve "Build Once, Run Anywhere", I containerized all microservices using Dockerfiles and orchestrated the cluster using **Docker Compose**. Finally, I deployed the entire environment on an **AWS Linux 2023** instance.'
 				},
 			],
 		},
 	},
 
 	// =========================================================================
-	// 项目 5: File Chain (Cybersecurity / Web3)
+	// 项目 5: File Chain (更新真实图片)
 	// =========================================================================
 	{
 		id: 5,
 		title: 'File Chain Secure Platform',
 		category: 'Cybersecurity / Web3',
-		img: WebImage1,
+		img: Fc3,
 
 		ProjectHeader: {
 			title: 'File Chain - Encrypted Cloud Storage',
-			publishDate: 'Oct 2025',
+			publishDate: 'Spring 2025',
 			tags: 'Python / React / Blockchain / Cryptography',
 		},
 		ProjectImages: [
-			{ id: 1, title: 'Secure File Sharing Flow', img: WebImage1 },
-			{ id: 2, title: 'Blockchain Transaction Log (Sepolia)', img: WebImage2 },
+			{ id: 1, title: 'User Registration', img: Fc1 },
+			{ id: 2, title: 'Secure Login', img: Fc2 },
+			{ id: 3, title: 'Platform Dashboard', img: Fc3 },
+			{ id: 4, title: 'Encrypted File Management', img: Fc4 },
+			{ id: 5, title: 'Blockchain Upload Confirmation', img: Fc5 },
+			{ id: 6, title: 'Permission Request Management', img: Fc6 },
+			{ id: 7, title: 'Immutable Audit Logs', img: Fc7 },
+			{ id: 8, title: 'Local Encryption Client', img: Fc8 },
 		],
 		ProjectInfo: {
 			InfoHeading: 'Project Context',
 			InfoData: [
-				{ id: 1, title: 'Subject', details: 'CSIT953 - Network Security' },
+				{ id: 1, title: 'Subject', details: 'Cyber Security' },
 				{ id: 2, title: 'Role', details: 'Security Architect & Full Stack Dev' },
 				{ id: 3, title: 'Team Size', details: '5 Members' },
 				{ id: 4, title: 'Focus', details: 'End-to-End Encryption & Auditability' },
@@ -352,15 +381,15 @@ export const projectsData = [
 			Resources: [
 				{
 					id: 1,
-					title: 'Source Code',
-					details: '#',
+					title: 'Frontend Code',
+					details: 'https://github.com/PinocchioHao/file-chain-front',
 					icon: <FiGithub />
 				},
 				{
 					id: 2,
-					title: 'Security Design Doc',
-					details: '#',
-					icon: <FiLock />
+					title: 'Backend Code',
+					details: 'https://github.com/PinocchioHao/file-chain',
+					icon: <FiGithub />
 				},
 			],
 
@@ -369,22 +398,17 @@ export const projectsData = [
 				{
 					id: 1,
 					heading: 'Hybrid Architecture & End-to-End Encryption',
-					details: 'To meet strict data confidentiality requirements, I designed a **Hybrid Architecture**. The **Local Client** handles core cryptographic operations: symmetric encryption (AES) and digital signatures (ECDSA) before upload. This ensures the cloud server never accesses raw user data or private keys, achieving a true **Zero Trust** storage model.'
+					details: 'To meet strict data confidentiality requirements, I designed a **Hybrid Architecture**. The **Local Client** handles core cryptographic operations: symmetric encryption (AES) and digital signatures (ECDSA) before upload. This ensures the cloud server never accesses raw user data, achieving a true **Zero Trust** storage model.'
 				},
 				{
 					id: 2,
 					heading: 'Blockchain Integration for Auditability',
-					details: 'To address trust concerns in cloud storage, I integrated **Web3** technology to record critical operations on-chain. Whenever file uploads, access requests, or approvals occur, the system automatically writes metadata (e.g., file hash, requester ID, timestamps) to the **Sepolia Testnet**. This creates an **Immutable Audit Log**, ensuring full-lifecycle traceability of all files.'
+					details: 'To address trust concerns in cloud storage, I integrated **Web3** technology to record critical operations on-chain. Whenever file uploads or access requests occur, the system automatically writes metadata to the **Sepolia Testnet**. This creates an **Immutable Audit Log**, ensuring full-lifecycle traceability.'
 				},
 				{
 					id: 3,
 					heading: 'Secure Key Exchange Mechanism',
-					details: 'I implemented a secure key exchange mechanism based on **ECC**. When a file owner approves a request, the system encrypts the AES key using the requester\'s **ECC Public Key** (Key Wrapping) and records it on the blockchain. The requester then uses their local **ECC Private Key** to decrypt it, solving the key distribution problem over insecure channels.'
-				},
-				{
-					id: 4,
-					heading: 'Full Stack Implementation (Python/React)',
-					details: 'I built a high-performance RESTful API using **Python FastAPI** and an intuitive frontend with **React**. I managed the entire process from technology selection and cryptographic algorithm implementation (Python Cryptography Library) to system testing, balancing robust security with user experience.'
+					details: 'I implemented a secure key exchange mechanism based on **ECC**. When a file owner approves a request, the system encrypts the AES key using the requester\'s **ECC Public Key** (Key Wrapping). The requester then uses their local **ECC Private Key** to decrypt it, solving the key distribution problem over insecure channels.'
 				},
 			],
 		},
