@@ -1,6 +1,6 @@
 import { FiMenu, FiMoon, FiSun, FiX, FiArrowDownCircle } from 'react-icons/fi'; // 1. 引入下载图标
 import { useState } from "react";
-import UseThemeSwitcher from "../../hooks/UseThemeSwitcher.jsx";
+import UseThemeSwitcher from "../../hooks/useThemeSwitcher.jsx";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import logoLight from '../../images/logo-light.svg';

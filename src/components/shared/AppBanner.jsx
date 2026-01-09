@@ -1,4 +1,4 @@
-import useThemeSwitcher from '../../hooks/useThemeSwitcher';
+import useThemeSwitcher from '../../hooks/useThemeSwitcher.jsx';
 import { FiArrowDownCircle, FiMessageSquare } from 'react-icons/fi'; // 引入 Message 图标
 import developerLight from '../../images/developer.svg';
 import developerDark from '../../images/developer-dark.svg';
