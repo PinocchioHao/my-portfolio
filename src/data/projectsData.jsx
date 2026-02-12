@@ -17,6 +17,7 @@ import Su2 from '../images/project/su2.png'; // Parking
 import Su3 from '../images/project/su3.png'; // Energy
 import Su4 from '../images/project/su4.png'; // Driving Test 1
 import Su5 from '../images/project/su5.png'; // Driving Test 2
+import Su6 from '../images/project/su6.png'; // Disco Analysis (New)
 
 // 4. 引入 File Chain 图片
 import Fc1 from '../images/project/fc1.png'; // Register
@@ -27,6 +28,7 @@ import Fc5 from '../images/project/fc5.png'; // Upload Success
 import Fc6 from '../images/project/fc6.png'; // Permission
 import Fc7 from '../images/project/fc7.png'; // Blockchain Log
 import Fc8 from '../images/project/fc8.png'; // Client Tool
+import Fc9 from '../images/project/fc9.png'; // Sepolia Record (New)
 
 export const projectsData = [
 	// =========================================================================
@@ -269,6 +271,8 @@ export const projectsData = [
 			{ id: 3, title: 'Energy Reporting Service', img: Su3 },
 			{ id: 4, title: 'Driving Test Booking - Step 1', img: Su4 },
 			{ id: 5, title: 'Driving Test Booking - Step 2', img: Su5 },
+			// 新增图片: Disco 流程分析
+			{ id: 6, title: 'Process Mining Analysis (Disco)', img: Su6 },
 		],
 		ProjectInfo: {
 			InfoHeading: 'Project Context',
@@ -353,6 +357,8 @@ export const projectsData = [
 			{ id: 6, title: 'Permission Request Management', img: Fc6 },
 			{ id: 7, title: 'Immutable Audit Logs', img: Fc7 },
 			{ id: 8, title: 'Local Encryption Client', img: Fc8 },
+			// 新增图片: Sepolia 记录
+			{ id: 9, title: 'Sepolia Blockchain Transaction', img: Fc9 },
 		],
 		ProjectInfo: {
 			InfoHeading: 'Project Context',
